@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.dao.BookmarkDao;
-import com.example.dao.BookmarkDao.BookmarkView;
 import com.example.dao.EntryDao;
 import com.example.entity.Bookmark;
 import com.example.entity.Entry;
@@ -27,7 +27,7 @@ public class BookmarkController {
     }
 
     @GetMapping("{username}")
-    List<BookmarkView> findAll(@PathVariable String username) {
+    List<Map<String, Object>> findByUsername(@PathVariable String username) {
         return bookmarkDao.findByUsername(username);
     }
 
