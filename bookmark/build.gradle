@@ -35,4 +35,5 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
     compile 'org.seasar.doma.boot:doma-spring-boot-starter:1.1.0'
     compile "org.seasar.doma:doma:$domaVersion"
+	compile('org.flywaydb:flyway-core')
 }
