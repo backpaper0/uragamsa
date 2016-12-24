@@ -1,7 +1,6 @@
 buildscript {
 	ext {
 		springBootVersion = '1.4.2.RELEASE'
-        domaVersion = '2.13.0'
 	}
 	repositories {
 		mavenCentral()
@@ -12,7 +11,7 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply from: 'eclipse.gradle'
+apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 jar {
@@ -28,13 +27,7 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.cloud:spring-cloud-starter-oauth2')
-	compile('org.springframework.boot:spring-boot-starter-jdbc')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-    compile 'org.seasar.doma.boot:doma-spring-boot-starter:1.1.0'
-    compile "org.seasar.doma:doma:$domaVersion"
-	compile('org.flywaydb:flyway-core')
 }
 
 dependencyManagement {
