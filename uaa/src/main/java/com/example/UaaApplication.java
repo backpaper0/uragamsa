@@ -1,8 +1,8 @@
 package com.example;
 
-import java.security.Principal;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +19,7 @@ public class UaaApplication {
     }
 
     @GetMapping("/userinfo")
-    Principal userinfo(Principal principal) {
-        return principal;
+    Authentication userinfo(Authentication authentication) {
+        return authentication;
     }
 }

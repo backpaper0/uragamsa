@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>bookmark</title>
+    </head>
+    <body>
+        <p><span data-th-text="${#authentication.name}">authentication.name</span></p>
+        <p><span data-th-text="${user}">user</span>'s bookmark</p>
+        <dl data-th-each="bookmark : ${bookmarks}">
+            <dt>
+                <a href="#" data-th-href="${bookmark.url}" data-th-text="${bookmark.title}">title</a>
+                <a href="entry.html" data-th-href="@{/entry(url=${bookmark.url})}"><span>9</span> users</a>
+            </dt>
+            <dd data-th-text="${bookmark.comment}">comment</dd>
+        </dl>
+    </body>
+</html>

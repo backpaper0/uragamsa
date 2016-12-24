@@ -11,4 +11,5 @@ create table Bookmark (
     ,username varchar(100)
     ,entryId bigint
     ,primary key (id)
+    ,foreign key (entryId) references Entry (id)
 );
