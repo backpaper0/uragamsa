@@ -10,7 +10,7 @@
         <dl data-th-each="bookmark : ${bookmarks}">
             <dt>
                 <a href="#" data-th-href="${bookmark.url}" data-th-text="${bookmark.title}">title</a>
-                <a href="entry.html" data-th-href="@{/entry(url=${bookmark.url})}"><span>9</span> users</a>
+                <a href="entry.html" data-th-href="@{/entry(url=${bookmark.url})}"><span data-th-text="${bookmark.count}">n</span> users</a>
             </dt>
             <dd data-th-text="${bookmark.comment}">comment</dd>
         </dl>

@@ -9,7 +9,7 @@
         <dl>
             <dt>
                 <a href="#" data-th-href="${entry.url}" data-th-text="${entry.title}">title</a>
-                <span>9</span> users
+                <span data-th-text="${bookmarks.size()}">n</span> users
             </dt>
             <dd data-th-each="bookmark : ${bookmarks}">
                 <a data-th-text="${bookmark.username}" href="user.html" data-th-href="@{'/' + ${bookmark.username}}">username</a>
