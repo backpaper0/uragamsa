@@ -31,6 +31,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.cloud:spring-cloud-starter-oauth2')
     compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4')
+	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+    compile('org.springframework.cloud:spring-cloud-starter-sleuth')
+    compile('org.springframework.cloud:spring-cloud-sleuth-zipkin')
 }
 
 dependencyManagement {

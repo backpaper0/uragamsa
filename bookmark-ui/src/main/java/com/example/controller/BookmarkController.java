@@ -34,7 +34,7 @@ public class BookmarkController {
         ParameterizedTypeReference<List<Map<String, Object>>> responseType = new ParameterizedTypeReference<List<Map<String, Object>>>() {
         };
         List<Map<String, Object>> bookmarks = restTemplate
-                .exchange("http://localhost:8000/" + user, HttpMethod.GET, null, responseType)
+                .exchange("http://bookmark-api/" + user, HttpMethod.GET, null, responseType)
                 .getBody();
         model.addAttribute("bookmarks", bookmarks);
         model.addAttribute("user", user);
@@ -46,7 +46,7 @@ public class BookmarkController {
         ParameterizedTypeReference<Map<String, Object>> responseType = new ParameterizedTypeReference<Map<String, Object>>() {
         };
         Map<String, Object> respomse = restTemplate
-                .exchange("http://localhost:8000/entry?url=" + url, HttpMethod.GET, null,
+                .exchange("http://bookmark-api/entry?url=" + url, HttpMethod.GET, null,
                         responseType)
                 .getBody();
         model.addAttribute("bookmarks", respomse.get("bookmarks"));
@@ -66,7 +66,7 @@ public class BookmarkController {
         form.add("url", url);
         form.add("title", title);
         form.add("comment", comment);
-        restTemplate.postForObject("http://localhost:8000/add", form, String.class);
+        restTemplate.postForObject("http://bookmark-api/add", form, String.class);
         return "redirect:/entry?url=" + url;
     }
 }

@@ -1,1 +1,1 @@
-include 'bookmark', 'uaa', 'bookmark-ui'
+include 'bookmark', 'uaa', 'bookmark-ui', 'discovery-service', 'zipkin-ui'

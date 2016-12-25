@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
 jar {
-	baseName = 'uaa'
+	baseName = 'zipkin'
 	version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -27,10 +27,9 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.cloud:spring-cloud-starter-oauth2')
-	compile('org.springframework.cloud:spring-cloud-starter-eureka')
-    compile('org.springframework.cloud:spring-cloud-starter-sleuth')
-    compile('org.springframework.cloud:spring-cloud-sleuth-zipkin')
+	compile('org.springframework.boot:spring-boot-starter')
+	compile('io.zipkin.java:zipkin-server')
+	runtime('io.zipkin.java:zipkin-autoconfigure-ui')
 }
 
 dependencyManagement {
