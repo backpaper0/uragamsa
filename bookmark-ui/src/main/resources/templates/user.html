@@ -5,7 +5,10 @@
         <title>bookmark</title>
     </head>
     <body>
-        <p><span data-th-text="${#authentication.name}">authentication.name</span></p>
+        <p>
+            <a href="user.html" data-th-href="@{'/' + ${#authentication.name}}" data-th-text="${#authentication.name}">authentication.name</a>
+            <a href="add.html" data-th-href="@{'/add'}">add</a>
+        </p>
         <p><span data-th-text="${user}">user</span>'s bookmark</p>
         <dl data-th-each="bookmark : ${bookmarks}">
             <dt>

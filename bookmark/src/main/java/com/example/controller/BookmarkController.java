@@ -30,7 +30,7 @@ public class BookmarkController {
         return bookmarkDao.findByUsername(username);
     }
 
-    @PostMapping
+    @PostMapping("/add")
     Bookmark post(Principal principal,
             @RequestParam String url,
             @RequestParam String title,

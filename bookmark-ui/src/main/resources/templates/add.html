@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>add bookmark</title>
+    </head>
+    <body>
+        <p>
+            <a href="user.html" data-th-href="@{'/' + ${#authentication.name}}" data-th-text="${#authentication.name}">authentication.name</a>
+            <a href="add.html" data-th-href="@{'/add'}">add</a>
+        </p>
+        <form action="entry.html" data-th-action="@{'/add'}" method="post">
+            <dl>
+                <dt>url</dt>
+                <dd><input type="text" name="url"/></dd>
+                <dt>title</dt>
+                <dd><input type="text" name="title"/></dd>
+                <dt>comment</dt>
+                <dd><input type="text" name="comment"/></dd>
+            </dl>
+            <p><button type="submit">Add</button></p>
+        </form>
+    </body>
+</html>

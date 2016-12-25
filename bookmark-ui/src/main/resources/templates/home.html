@@ -5,6 +5,9 @@
         <title>Bookmark</title>
     </head>
     <body>
-        <p><a href="user.html" data-th-href="@{'/user'}">user's bookmark</a></p>
+        <p>
+            <a href="user.html" data-th-href="@{'/' + ${#authentication.name}}" data-th-text="${#authentication.name}">authentication.name</a>
+            <a href="add.html" data-th-href="@{'/add'}">add</a>
+        </p>
     </body>
 </html>

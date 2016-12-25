@@ -5,7 +5,10 @@
         <title>entry</title>
     </head>
     <body>
-        <p><span data-th-text="${#authentication.name}">authentication.name</span></p>
+        <p>
+            <a href="user.html" data-th-href="@{'/' + ${#authentication.name}}" data-th-text="${#authentication.name}">authentication.name</a>
+            <a href="add.html" data-th-href="@{'/add'}">add</a>
+        </p>
         <dl>
             <dt>
                 <a href="#" data-th-href="${entry.url}" data-th-text="${entry.title}">title</a>

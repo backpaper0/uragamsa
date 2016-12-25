@@ -6,8 +6,11 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
@@ -49,5 +52,21 @@ public class BookmarkController {
         model.addAttribute("bookmarks", respomse.get("bookmarks"));
         model.addAttribute("entry", respomse.get("entry"));
         return "entry";
+    }
+
+    @GetMapping("/add")
+    String add() {
+        return "add";
+    }
+
+    @PostMapping("/add")
+    String add(Model model, @RequestParam String url, @RequestParam String title,
+            @RequestParam(required = false) String comment) {
+        MultiValueMap<String, String> form = new LinkedMultiValueMap<>();
+        form.add("url", url);
+        form.add("title", title);
+        form.add("comment", comment);
+        restTemplate.postForObject("http://localhost:8000/add", form, String.class);
+        return "redirect:/entry?url=" + url;
     }
 }
