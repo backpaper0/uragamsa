@@ -46,3 +46,5 @@ dependencyManagement {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR3"
 	}
 }
+
+eclipse.project.name = 'msa_bookmark-api'
