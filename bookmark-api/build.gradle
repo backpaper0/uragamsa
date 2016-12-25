@@ -48,3 +48,11 @@ dependencyManagement {
 }
 
 eclipse.project.name = 'msa_bookmark-api'
+
+//Domaはコンパイル時にクラスパス上のSQLファイルを参照するが、
+//Gradleはデフォルトだとコンパイル後にリソースコピーが行われる。
+//なのでリソースコピーとコンパイルの順番を入れ替える。
+compileJava.dependsOn processResources
+//また、リソースの出力先がクラスパス上に無いのでコンパイルの
+//出力先と同じディレクトリに設定する。
+processResources.destinationDir = compileJava.destinationDir
